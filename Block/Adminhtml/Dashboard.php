@@ -1,9 +1,33 @@
 <?php
+/**
+ * Magenerds\Dashboard\Block\AfterPrice
+ *
+ * Copyright (c) 2017 Magenerds
+ * All rights reserved
+ *
+ * This product includes proprietary software developed at Magenerds, Germany
+ * For more information see http://www.magenerds.com/
+ *
+ * To obtain a valid license for using this software please contact us at
+ * info@magenerds.com
+ */
 
+/**
+ * @category   Magenerds
+ * @package    Magenerds_Dashboard
+ * @subpackage Block
+ * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @link       http://www.magenerds.com/
+ * @author     Florian Sydekum <info@magenerds.com>
+ */
 namespace Magenerds\Dashboard\Block\Adminhtml;
 
 use Magento\Backend\Block\Template;
 
+/**
+ * Class Dashboard
+ * @package Magenerds\Dashboard\Block\Adminhtml
+ */
 class Dashboard extends Template
 {
     /**
@@ -20,6 +44,11 @@ class Dashboard extends Template
      * Holds the number of blog feeds
      */
     const NUMBER_BLOG_FEEDS = 5;
+
+    /**
+     * Holds the number of news feeds
+     */
+    const NUMBER_NEWS_FEEDS = 5;
 
     /**
      * Returns the blog feeds
@@ -55,6 +84,11 @@ class Dashboard extends Template
         return $feeds;
     }
 
+    /**
+     * Returns the news feeds
+     *
+     * @return []
+     */
     public function getNewsFeeds()
     {
         $feeds = [];
@@ -77,7 +111,7 @@ class Dashboard extends Template
                 'image' => $img,
                 'description' => $feed->getDescription()
             ];
-            if ($ctr == self::NUMBER_BLOG_FEEDS) break;
+            if ($ctr == self::NUMBER_NEWS_FEEDS) break;
             $ctr++;
         }
 

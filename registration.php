@@ -1,5 +1,25 @@
 <?php
+/**
+ * Magenerds\Dashboard\Block\AfterPrice
+ *
+ * Copyright (c) 2017 Magenerds
+ * All rights reserved
+ *
+ * This product includes proprietary software developed at Magenerds, Germany
+ * For more information see http://www.magenerds.com/
+ *
+ * To obtain a valid license for using this software please contact us at
+ * info@magenerds.com
+ */
 
+/**
+ * @category   Magenerds
+ * @package    Magenerds_Dashboard
+ * @subpackage Module
+ * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @link       http://www.magenerds.com/
+ * @author     Florian Sydekum <info@magenerds.com>
+ */
 \Magento\Framework\Component\ComponentRegistrar::register(
     \Magento\Framework\Component\ComponentRegistrar::MODULE,
     'Magenerds_Dashboard',

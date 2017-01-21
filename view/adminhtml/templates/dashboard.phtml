@@ -1,3 +1,28 @@
+<?php
+/**
+ * Copyright (c) 2017 Magenerds
+ * All rights reserved
+ *
+ * This product includes proprietary software developed at Magenerds, Germany
+ * For more information see http://www.mageneds.com/
+ *
+ * To obtain a valid license for using this software please contact us at
+ * info@magenerds.com
+ */
+
+/**
+ * @category   Magenerds
+ * @package    Magenerds_Dashboard
+ * @subpackage view
+ * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @link       http://www.magenerds.com/
+ * @author     Florian Sydekum <info@magenerds.com>
+ */
+
+/**
+ * @var $block \Magenerds\Dashboard\Block\Adminhtml\Dashboard
+ */
+?>
 <div class="dashboard-container row">
     <div class="ol-m-12s">
         <div class="col-m-4 text">
@@ -12,10 +37,10 @@
             </div>
             <div class="badges">
                 <div>Our team's certifications:</div>
-                <img src="<?php echo $this->getViewFileUrl('Magenerds_Dashboard::images/m2-trained-badge.png'); ?>" alt="Magento 2 Trained Solution Partner"/>
-                <img src="<?php echo $this->getViewFileUrl('Magenerds_Dashboard::images/badge-cert-solution.png'); ?>" alt="Magento Certified Solution Specialist"/>
-                <img src="<?php echo $this->getViewFileUrl('Magenerds_Dashboard::images/badge-cert-dev-plus.png'); ?>" alt="Magento Certified Developer Plus"/>
-                <img src="<?php echo $this->getViewFileUrl('Magenerds_Dashboard::images/badge-cert-front.png'); ?>" alt="Magento Certified Frontend Developer"/>
+                <img src="<?php echo $block->getViewFileUrl('Magenerds_Dashboard::images/m2-trained-badge.png'); ?>" alt="Magento 2 Trained Solution Partner"/>
+                <img src="<?php echo $block->getViewFileUrl('Magenerds_Dashboard::images/badge-cert-solution.png'); ?>" alt="Magento Certified Solution Specialist"/>
+                <img src="<?php echo $block->getViewFileUrl('Magenerds_Dashboard::images/badge-cert-dev-plus.png'); ?>" alt="Magento Certified Developer Plus"/>
+                <img src="<?php echo $block->getViewFileUrl('Magenerds_Dashboard::images/badge-cert-front.png'); ?>" alt="Magento Certified Frontend Developer"/>
             </div>
         </div>
         <div class="col-m-4 text">
@@ -46,7 +71,7 @@
             </div>
         </div>
         <div class="col-m-4">
-            <img class="magenerds-logo" src="<?php echo $this->getViewFileUrl('Magenerds_Dashboard::images/magenerds-logo.png'); ?>" alt="Magento 2 Trained Solution Partner"/>
+            <img class="magenerds-logo" src="<?php echo $block->getViewFileUrl('Magenerds_Dashboard::images/magenerds-logo.png'); ?>" alt="Magento 2 Trained Solution Partner"/>
         </div>
     </div>
 </div>

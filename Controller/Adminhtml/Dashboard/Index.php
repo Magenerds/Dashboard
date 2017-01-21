@@ -1,11 +1,35 @@
 <?php
+/**
+ * Magenerds\Dashboard\Block\AfterPrice
+ *
+ * Copyright (c) 2017 Magenerds
+ * All rights reserved
+ *
+ * This product includes proprietary software developed at Magenerds, Germany
+ * For more information see http://www.magenerds.com/
+ *
+ * To obtain a valid license for using this software please contact us at
+ * info@magenerds.com
+ */
 
+/**
+ * @category   Magenerds
+ * @package    Magenerds_Dashboard
+ * @subpackage Controller
+ * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @link       http://www.magenerds.com/
+ * @author     Florian Sydekum <info@magenerds.com>
+ */
 namespace Magenerds\Dashboard\Controller\Adminhtml\Dashboard;
 
 use Magento\Backend\App\Action\Context;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Backend\App\Action;
 
+/**
+ * Class Index
+ * @package Magenerds\Dashboard\Controller\Adminhtml\Dashboard
+ */
 class Index extends Action
 {
     /**
