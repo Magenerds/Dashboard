@@ -1,7 +1,5 @@
 <?php
 /**
- * Magenerds\Dashboard\Block\AfterPrice
- *
  * Copyright (c) 2017 Magenerds
  * All rights reserved
  *
@@ -13,9 +11,6 @@
  */
 
 /**
- * @category   Magenerds
- * @package    Magenerds_Dashboard
- * @subpackage Module
  * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
  * @link       http://www.magenerds.com/
  * @author     Florian Sydekum <info@magenerds.com>

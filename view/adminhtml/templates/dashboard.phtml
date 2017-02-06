@@ -11,9 +11,6 @@
  */
 
 /**
- * @category   Magenerds
- * @package    Magenerds_Dashboard
- * @subpackage view
  * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
  * @link       http://www.magenerds.com/
  * @author     Florian Sydekum <info@magenerds.com>
@@ -59,10 +56,10 @@
                 to for contacting us. We only support cases issued via our bug report form.
             </div>
             <div class="buttons">
-                <button class="action-primary" title="Get support" id="support" onclick="setLocation('')">
+                <button class="action-primary" title="Get support" id="support" onclick="setLocation('http://www.magenerds.com/report-a-bug/')">
                     <span>Get support</span>
                 </button>
-                <button class="action-primary" title="Documentation" id="documentation" onclick="setLocation('')">
+                <button class="action-primary" title="Documentation" id="documentation" onclick="setLocation('http://doc.magenerds.com/')">
                     <span>Documentation</span>
                 </button>
                 <button class="action-primary" title="Website" id="website" onclick="setLocation('http://www.magenerds.com')">
@@ -83,9 +80,6 @@
                 <?php foreach ($block->getBlogFeeds() as $feed): ?>
                     <li>
                         <div class="title"><a href="<?php echo $feed['link'] ?>" target="_blank"><?php echo $feed['title'] ?></a> (<?php echo $feed['date']; ?>)</div>
-                        <?php if ($feed['image'] != ''): ?>
-                            <div><img src="<?php echo $feed['image'] ?>" /></div>
-                        <?php endif; ?>
                         <div class="description"><?php echo $feed['description'] ?>... <a href="<?php echo $feed['link'] ?>" target="_blank">(read more)</a></div>
                     </li>
                 <?php endforeach; ?>
@@ -96,11 +90,8 @@
             <ul>
                 <?php foreach ($block->getNewsFeeds() as $feed): ?>
                     <li>
-                        <div class="title"><a href="<?php echo $feed['link'] ?>" target="_blank"><?php echo $feed['title'] ?></a> (<?php echo $feed['date']; ?>)</div>
-                        <?php if ($feed['image'] != ''): ?>
-                            <div><img src="<?php echo $feed['image'] ?>" /></div>
-                        <?php endif; ?>
-                        <div class="description"><?php echo $feed['description'] ?>... <a href="<?php echo $feed['link'] ?>" target="_blank">(read more)</a></div>
+                        <div class="title"><?php echo $feed['title'] ?></div>
+                        <div class="content"><?php echo $feed['content'] ?></div>
                     </li>
                 <?php endforeach; ?>
             </ul>

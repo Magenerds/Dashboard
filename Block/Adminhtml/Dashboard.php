@@ -1,7 +1,5 @@
 <?php
 /**
- * Magenerds\Dashboard\Block\AfterPrice
- *
  * Copyright (c) 2017 Magenerds
  * All rights reserved
  *
@@ -12,21 +10,14 @@
  * info@magenerds.com
  */
 
-/**
- * @category   Magenerds
- * @package    Magenerds_Dashboard
- * @subpackage Block
- * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
- * @link       http://www.magenerds.com/
- * @author     Florian Sydekum <info@magenerds.com>
- */
 namespace Magenerds\Dashboard\Block\Adminhtml;
 
 use Magento\Backend\Block\Template;
 
 /**
- * Class Dashboard
- * @package Magenerds\Dashboard\Block\Adminhtml
+ * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @link       http://www.magenerds.com/
+ * @author     Florian Sydekum <info@magenerds.com>
  */
 class Dashboard extends Template
 {
@@ -62,19 +53,10 @@ class Dashboard extends Template
 
         $ctr = 1;
         foreach ($reader->import(self::BLOG_FEED_URL) as $feed) {
-            $matches = [];
-            preg_match('/^src=".*\..{3}"/', $feed->getContent(), $matches);
-            $img = '';
-
-            if (count($matches)) {
-                $img = substr($matches[0], 4, strlen($matches[0]));
-            }
-
             $feeds[] = [
                 'link' => $feed->getLink(),
                 'title' => $feed->getTitle(),
                 'date' => substr($feed->getDateCreated(), 0, 10),
-                'image' => $img,
                 'description' => $feed->getDescription()
             ];
             if ($ctr == self::NUMBER_BLOG_FEEDS) break;
@@ -96,20 +78,11 @@ class Dashboard extends Template
 
         $ctr = 1;
         foreach ($reader->import(self::NEWS_FEED_URL) as $feed) {
-            $matches = [];
-            preg_match('/^src=".*\..{3}"/', $feed->getContent(), $matches);
-            $img = '';
-
-            if (count($matches)) {
-                $img = substr($matches[0], 4, strlen($matches[0]));
-            }
-
             $feeds[] = [
                 'link' => $feed->getLink(),
                 'title' => $feed->getTitle(),
                 'date' => substr($feed->getDateCreated(), 0, 10),
-                'image' => $img,
-                'description' => $feed->getDescription()
+                'content' => $feed->getContent()
             ];
             if ($ctr == self::NUMBER_NEWS_FEEDS) break;
             $ctr++;

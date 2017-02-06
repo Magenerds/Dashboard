@@ -1,7 +1,5 @@
 <?php
 /**
- * Magenerds\Dashboard\Block\AfterPrice
- *
  * Copyright (c) 2017 Magenerds
  * All rights reserved
  *
@@ -12,14 +10,6 @@
  * info@magenerds.com
  */
 
-/**
- * @category   Magenerds
- * @package    Magenerds_Dashboard
- * @subpackage Controller
- * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
- * @link       http://www.magenerds.com/
- * @author     Florian Sydekum <info@magenerds.com>
- */
 namespace Magenerds\Dashboard\Controller\Adminhtml\Dashboard;
 
 use Magento\Backend\App\Action\Context;
@@ -27,8 +17,9 @@ use Magento\Framework\View\Result\PageFactory;
 use Magento\Backend\App\Action;
 
 /**
- * Class Index
- * @package Magenerds\Dashboard\Controller\Adminhtml\Dashboard
+ * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @link       http://www.magenerds.com/
+ * @author     Florian Sydekum <info@magenerds.com>
  */
 class Index extends Action
 {
