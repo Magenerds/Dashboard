@@ -19,10 +19,10 @@
  -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="Magenerds_Dashboard::dashboard"
+        <add id="Magenerds_Dashboard::magenerds"
              title="Magenerds"
              module="Magenerds_Dashboard"
-             sortOrder="9999"
+             sortOrder="100"
              resource="Magento_Backend::content"
              action="magenerds/dashboard"
         />
