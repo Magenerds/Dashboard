@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2017 Magenerds
+ * Copyright (c) 2019 Magenerds
  * All rights reserved
  *
  * This product includes proprietary software developed at Magenerds, Germany
@@ -11,7 +11,7 @@
  */
 
 /**
- * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @copyright  Copyright (c) 2019 Magenerds (http://www.magenerds.com)
  * @link       http://www.magenerds.com/
  * @author     Florian Sydekum <info@magenerds.com>
  */

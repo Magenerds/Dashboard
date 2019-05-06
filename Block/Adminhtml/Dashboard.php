@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2017 Magenerds
+ * Copyright (c) 2019 Magenerds
  * All rights reserved
  *
  * This product includes proprietary software developed at Magenerds, Germany
@@ -12,10 +12,11 @@
 
 namespace Magenerds\Dashboard\Block\Adminhtml;
 
+use Exception;
 use Magento\Backend\Block\Template;
 
 /**
- * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @copyright  Copyright (c) 2019 Magenerds (http://www.magenerds.com)
  * @link       http://www.magenerds.com/
  * @author     Florian Sydekum <info@magenerds.com>
  */
@@ -42,25 +43,43 @@ class Dashboard extends Template
     const NUMBER_NEWS_FEEDS = 5;
 
     /**
+     * @return object
+     */
+    protected function getReader()
+    {
+        if (class_exists('\Zend_Feed_Reader')) {
+            return new \Zend_Feed_Reader();
+        }
+        /** @noinspection PhpFullyQualifiedNameUsageInspection PhpUndefinedNamespaceInspection */
+        return new \Zend\Feed\Reader\Reader();
+    }
+
+    /**
      * Returns the blog feeds
      *
-     * @return []
+     * @return array
      */
     public function getBlogFeeds()
     {
         $feeds = [];
-        $reader = new \Zend_Feed_Reader();
+        $reader = $this->getReader();
 
         $ctr = 1;
-        foreach ($reader->import(self::BLOG_FEED_URL) as $feed) {
-            $feeds[] = [
-                'link' => $feed->getLink(),
-                'title' => $feed->getTitle(),
-                'date' => substr($feed->getDateCreated(), 0, 10),
-                'description' => $feed->getDescription()
-            ];
-            if ($ctr == self::NUMBER_BLOG_FEEDS) break;
-            $ctr++;
+        try {
+            foreach ($reader->import(self::BLOG_FEED_URL) as $feed) {
+                $feeds[] = [
+                    'link' => $feed->getLink(),
+                    'title' => $feed->getTitle(),
+                    'date' => substr($feed->getDateCreated(), 0, 10),
+                    'description' => $feed->getDescription()
+                ];
+                if ($ctr == self::NUMBER_BLOG_FEEDS) {
+                    break;
+                }
+                $ctr++;
+            }
+        } catch (Exception $e) {
+            // do nothing
         }
 
         return $feeds;
@@ -69,23 +88,29 @@ class Dashboard extends Template
     /**
      * Returns the news feeds
      *
-     * @return []
+     * @return array
      */
     public function getNewsFeeds()
     {
         $feeds = [];
-        $reader = new \Zend_Feed_Reader();
+        $reader = $this->getReader();
 
         $ctr = 1;
-        foreach ($reader->import(self::NEWS_FEED_URL) as $feed) {
-            $feeds[] = [
-                'link' => $feed->getLink(),
-                'title' => $feed->getTitle(),
-                'date' => substr($feed->getDateCreated(), 0, 10),
-                'content' => $feed->getContent()
-            ];
-            if ($ctr == self::NUMBER_NEWS_FEEDS) break;
-            $ctr++;
+        try {
+            foreach ($reader->import(self::NEWS_FEED_URL) as $feed) {
+                $feeds[] = [
+                    'link' => $feed->getLink(),
+                    'title' => $feed->getTitle(),
+                    'date' => substr($feed->getDateCreated(), 0, 10),
+                    'content' => $feed->getContent()
+                ];
+                if ($ctr == self::NUMBER_NEWS_FEEDS) {
+                    break;
+                }
+                $ctr++;
+            }
+        } catch (Exception $e) {
+            // do nothing
         }
 
         return $feeds;

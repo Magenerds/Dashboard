@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright (c) 2017 Magenerds
+ * Copyright (c) 2019 Magenerds
  * All rights reserved
  *
  * This product includes proprietary software developed at Magenerds, Germany
- * For more information see http://www.mageneds.com/
+ * For more information see http://www.magenerds.com/
  *
  * To obtain a valid license for using this software please contact us at
  * info@magenerds.com
  */
 
 /**
- * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @copyright  Copyright (c) 2019 Magenerds (http://www.magenerds.com)
  * @link       http://www.magenerds.com/
  * @author     Florian Sydekum <info@magenerds.com>
  */
@@ -22,8 +22,8 @@
     <acl>
         <resources>
             <resource id="Magento_Backend::admin">
-                <resource id="Magenerds_Dashboard::dashboard" title="Magenerds" sortOrder="10" >
-                    <resource id="Magenerds_Dashboard::index" title="Magenerds" sortOrder="10" />
+                <resource id="Magenerds_Dashboard::dashboard" title="Magenerds" sortOrder="10">
+                    <resource id="Magenerds_Dashboard::index" title="Magenerds" sortOrder="10"/>
                 </resource>
             </resource>
         </resources>

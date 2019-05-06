@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2017 Magenerds
+ * Copyright (c) 2019 Magenerds
  * All rights reserved
  *
  * This product includes proprietary software developed at Magenerds, Germany
@@ -13,18 +13,19 @@
 namespace Magenerds\Dashboard\Controller\Adminhtml\Dashboard;
 
 use Magento\Backend\App\Action\Context;
+use Magento\Backend\Model\View\Result\Page;
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Backend\App\Action;
 
 /**
- * @copyright  Copyright (c) 2017 Magenerds (http://www.magenerds.com)
+ * @copyright  Copyright (c) 2019 Magenerds (http://www.magenerds.com)
  * @link       http://www.magenerds.com/
  * @author     Florian Sydekum <info@magenerds.com>
  */
 class Index extends Action
 {
     /**
-     * @var \Magento\Framework\View\Result\PageFactory
+     * @var PageFactory
      */
     protected $_resultPageFactory;
 
@@ -35,7 +36,8 @@ class Index extends Action
     public function __construct(
         Context $context,
         PageFactory $resultPageFactory
-    ) {
+    )
+    {
         parent::__construct($context);
         $this->_resultPageFactory = $resultPageFactory;
     }
@@ -43,11 +45,11 @@ class Index extends Action
     /**
      * Index action
      *
-     * @return \Magento\Backend\Model\View\Result\Page
+     * @return Page
      */
     public function execute()
     {
-        /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
+        /** @var Page $resultPage */
         $resultPage = $this->_resultPageFactory->create();
         $resultPage->setActiveMenu('Magenerds_Dashboard::dashboard');
         $resultPage->addBreadcrumb(__('Magenerds'), __('Magenerds'));

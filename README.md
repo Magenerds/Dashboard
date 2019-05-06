@@ -1,3 +1,3 @@
-# Magenerds_Dashboard
+# Magenerds Dashboard
 
 This module will serve information about Magenerds.
