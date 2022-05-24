@@ -25,12 +25,12 @@ class Dashboard extends Template
     /**
      * Holds the blog feed url
      */
-    const BLOG_FEED_URL = 'http://www.magenerds.com/category/magento-2/feed/';
+    const BLOG_FEED_URL = null; # http://www.magenerds.com/category/magento-2/feed/
 
     /**
      * Holds the news feed url
      */
-    const NEWS_FEED_URL = 'http://www.magenerds.com/category/dashboardnews/feed/';
+    const NEWS_FEED_URL = null; # http://www.magenerds.com/category/dashboardnews/feed/
 
     /**
      * Holds the number of blog feeds
@@ -62,18 +62,21 @@ class Dashboard extends Template
     public function getBlogFeeds()
     {
         $feeds = [];
+        if (!static::BLOG_FEED_URL) {
+            return $feeds;
+        }
         $reader = $this->getReader();
 
         $ctr = 1;
         try {
-            foreach ($reader->import(self::BLOG_FEED_URL) as $feed) {
+            foreach ($reader->import(static::BLOG_FEED_URL) as $feed) {
                 $feeds[] = [
                     'link' => $feed->getLink(),
                     'title' => $feed->getTitle(),
                     'date' => substr($feed->getDateCreated(), 0, 10),
-                    'description' => $feed->getDescription()
+                    'description' => $feed->getDescription(),
                 ];
-                if ($ctr == self::NUMBER_BLOG_FEEDS) {
+                if ($ctr == static::NUMBER_BLOG_FEEDS) {
                     break;
                 }
                 $ctr++;
@@ -93,18 +96,21 @@ class Dashboard extends Template
     public function getNewsFeeds()
     {
         $feeds = [];
+        if (!static::NEWS_FEED_URL) {
+            return $feeds;
+        }
         $reader = $this->getReader();
 
         $ctr = 1;
         try {
-            foreach ($reader->import(self::NEWS_FEED_URL) as $feed) {
+            foreach ($reader->import(static::NEWS_FEED_URL) as $feed) {
                 $feeds[] = [
                     'link' => $feed->getLink(),
                     'title' => $feed->getTitle(),
                     'date' => substr($feed->getDateCreated(), 0, 10),
-                    'content' => $feed->getContent()
+                    'content' => $feed->getContent(),
                 ];
-                if ($ctr == self::NUMBER_NEWS_FEEDS) {
+                if ($ctr == static::NUMBER_NEWS_FEEDS) {
                     break;
                 }
                 $ctr++;
